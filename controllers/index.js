@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
+const mainRoutes = require('./home-route');
 
-router.get('/', (req, res) => {
-    res.json({ 'index': 'index' });
-});
-
+router.get('/', mainRoutes);
 router.use('/api', apiRoutes);
     
 module.exports = router;
