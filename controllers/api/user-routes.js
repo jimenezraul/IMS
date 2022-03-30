@@ -1,4 +1,4 @@
-const User = require("../../models/User");
+const { User } = require("../../models");
 
 const router = require("express").Router();
 
@@ -33,7 +33,6 @@ router.post("/", async (req, res) => {
 
       res.json(newUser);
     });
-      
   } catch (err) {
     res.json({ message: err });
   }
