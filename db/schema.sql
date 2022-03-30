@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS inventory_management_systemb;
+
+CREATE DATABASE inventory_management_system;
