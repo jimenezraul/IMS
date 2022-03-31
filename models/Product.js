@@ -16,12 +16,17 @@ Product.init(
       allowNull: false,
       unique: true,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,
+    },
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       unique: false,
     },
-    description: {
+    units: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false,
