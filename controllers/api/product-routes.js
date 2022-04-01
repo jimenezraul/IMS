@@ -33,35 +33,49 @@ router.get("/", async (req, res) => {
 // get one product
 router.get("/:id", async (req, res) => {
   try {
-    const product = await Product.findByPk(req.params.id, {
+    const product_by_id = await Product.findByPk(req.params.id, {
       include: [
         {
-          model: Category,
-          attributes: ["id", "name"],
-        },
-        {
-          model: User,
-          attributes: ["id", "username"],
-        },
-        {
           model: Location,
-          attributes: ["id", "name"],
+          attributes: ["id", "slot", "quantity"],
         },
-        [
-          (Sequelize.literal(
-            "(SELECT sum(location.quantity) FROM location WHERE location.product_id=product.id)"
-          ),
-          "total_inventory"),
-        ],
-        [
-          Sequelize.literal(
-            "(SELECT sum(location.quantity * product.price ) FROM location WHERE location.product_id=product.id)"
-          ),
-          "total_inventory_value",
-        ],
       ],
     });
-    res.json(product);
+    if (product_by_id.locations.length > 0) {
+      const product = await Product.findByPk(req.params.id, {
+        include: [
+          {
+            model: Category,
+            attributes: ["id", "name"],
+          },
+          {
+            model: User,
+            attributes: ["id", "username"],
+          },
+          {
+            model: Location,
+            attributes: ["id", "name"],
+          },
+          [
+            (Sequelize.literal(
+              "(SELECT sum(location.quantity) FROM location WHERE location.product_id=product.id)"
+            ),
+            "total_inventory"),
+          ],
+          [
+            Sequelize.literal(
+              "(SELECT sum(location.quantity * product.price ) FROM location WHERE location.product_id=product.id)"
+            ),
+            "total_inventory_value",
+          ],
+        ],
+      });
+      res.json(product);
+    } else {
+      res.status(404).json({
+        error: "Product has no inventory",
+      });
+    }
   } catch (err) {
     console.error(err);
     res.status(500).json({
