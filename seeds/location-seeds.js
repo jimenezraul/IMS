@@ -6,7 +6,7 @@ const locationData = [
     slot: "A100C1",
     product_id: 1,
     user_id: 1,
-    quantity: 50,
+    quantity: 150,
   },
   {
     slot: "H125D1",
@@ -24,7 +24,7 @@ const locationData = [
     slot: "C023C1",
     product_id: 1,
     user_id: 4,
-    quantity: 50,
+    quantity: 150,
   },
   {
     slot: "F059D1",
@@ -37,7 +37,7 @@ const locationData = [
     slot: "A100C1",
     product_id: 2,
     user_id: 1,
-    quantity: 50,
+    quantity: 100,
   },
   {
     slot: "H125D1",
@@ -61,14 +61,14 @@ const locationData = [
     slot: "F059D1",
     product_id: 2,
     user_id: 1,
-    quantity: 100,
+    quantity: 200,
   },
   // Product 3
   {
     slot: "A100C1",
     product_id: 3,
     user_id: 1,
-    quantity: 50,
+    quantity: 250,
   },
   {
     slot: "H125D1",
@@ -86,7 +86,7 @@ const locationData = [
     slot: "C023C1",
     product_id: 3,
     user_id: 4,
-    quantity: 50,
+    quantity: 250,
   },
   {
     slot: "F059D1",
@@ -99,7 +99,7 @@ const locationData = [
     slot: "A100C1",
     product_id: 4,
     user_id: 1,
-    quantity: 50,
+    quantity: 120,
   },
   {
     slot: "H125D1",
@@ -111,7 +111,7 @@ const locationData = [
     slot: "D010E1",
     product_id: 4,
     user_id: 1,
-    quantity: 150,
+    quantity: 250,
   },
   {
     slot: "C023C1",
@@ -123,7 +123,7 @@ const locationData = [
     slot: "F059D1",
     product_id: 4,
     user_id: 1,
-    quantity: 100,
+    quantity: 300,
   },
   // Product 5
   {
@@ -136,7 +136,7 @@ const locationData = [
     slot: "H125D1",
     product_id: 5,
     user_id: 4,
-    quantity: 50,
+    quantity: 130,
   },
   {
     slot: "D010E1",
@@ -148,7 +148,7 @@ const locationData = [
     slot: "C023C1",
     product_id: 5,
     user_id: 4,
-    quantity: 50,
+    quantity: 150,
   },
   {
     slot: "F059D1",
@@ -161,13 +161,13 @@ const locationData = [
     slot: "A100C1",
     product_id: 6,
     user_id: 1,
-    quantity: 50,
+    quantity: 150,
   },
   {
     slot: "H125D1",
     product_id: 6,
     user_id: 4,
-    quantity: 50,
+    quantity: 150,
   },
   {
     slot: "D010E1",
@@ -198,7 +198,7 @@ const locationData = [
     slot: "H125D1",
     product_id: 7,
     user_id: 4,
-    quantity: 50,
+    quantity: 250,
   },
   {
     slot: "D010E1",
