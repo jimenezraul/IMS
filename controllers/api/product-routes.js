@@ -1,23 +1,33 @@
 const router = require("express").Router();
-const { Category, Product, User, Location } = require("../../models");
+const { Category, Product, User, Location, Supplier } = require("../../models");
 const Sequelize = require("../../config/connection");
 
 //get all products
 router.get("/", async (req, res) => {
   try {
     const products = await Product.findAll({
+      attributes: ["id", "name", "description", "price", "units"],
       include: [
-        {
-          model: Category,
-          attributes: ["id", "name"],
-        },
         {
           model: User,
           attributes: ["id", "username"],
         },
         {
+          model: Category,
+          attributes: ["id", "name"],
+        },
+        {
+          model: Supplier,
+        },
+        {
           model: Location,
           attributes: ["id", "slot", "quantity"],
+          include: [
+            {
+              model: User,
+              attributes: ["id", "username"],
+            },
+          ],
         },
       ],
     });
@@ -39,12 +49,15 @@ router.get("/:id", async (req, res) => {
         "name",
         "description",
         "price",
+        "units",
+        // Get total quantity of of the product
         [
           Sequelize.literal(
             "(SELECT sum(location.quantity) FROM location WHERE location.product_id=product.id AND location.quantity > 0)"
           ),
           "total_quantity",
         ],
+        // Get total inventory value of the product
         [
           Sequelize.literal(
             "(SELECT sum(location.quantity * product.price) FROM location WHERE location.product_id=product.id AND location.quantity > 0)"
@@ -55,18 +68,26 @@ router.get("/:id", async (req, res) => {
 
       include: [
         {
-          model: Category,
-          attributes: ["id", "name"],
-        },
-        {
           model: User,
           attributes: ["id", "username"],
         },
         {
+          model: Category,
+          attributes: ["id", "name"],
+        },
+        {
+          model: Supplier,
+        },
+        {
           model: Location,
           attributes: ["id", "slot", "quantity"],
+          include: [
+            {
+              model: User,
+              attributes: ["id", "username"],
+            },
+          ],
         },
-        // get a sum of all the location quantities
       ],
     });
     if (product) {
