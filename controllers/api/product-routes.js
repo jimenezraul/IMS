@@ -33,43 +33,43 @@ router.get("/", async (req, res) => {
 // get one product
 router.get("/:id", async (req, res) => {
   try {
-    const product_by_id = await Product.findByPk(req.params.id, {
+    const product = await Product.findByPk(req.params.id, {
+      attributes: [
+        "id",
+        "name",
+        "description",
+        "price",
+        [
+          Sequelize.literal(
+            "(SELECT sum(location.quantity) FROM location WHERE location.product_id=product.id AND location.quantity > 0)"
+          ),
+          "total_quantity",
+        ],
+        [
+          Sequelize.literal(
+            "(SELECT sum(location.quantity * product.price) FROM location WHERE location.product_id=product.id AND location.quantity > 0)"
+          ),
+          "total_value",
+        ],
+      ],
+
       include: [
+        {
+          model: Category,
+          attributes: ["id", "name"],
+        },
+        {
+          model: User,
+          attributes: ["id", "username"],
+        },
         {
           model: Location,
           attributes: ["id", "slot", "quantity"],
         },
+        // get a sum of all the location quantities
       ],
     });
-    if (product_by_id.locations.length > 0) {
-      const product = await Product.findByPk(req.params.id, {
-        include: [
-          {
-            model: Category,
-            attributes: ["id", "name"],
-          },
-          {
-            model: User,
-            attributes: ["id", "username"],
-          },
-          {
-            model: Location,
-            attributes: ["id", "name"],
-          },
-          [
-            (Sequelize.literal(
-              "(SELECT sum(location.quantity) FROM location WHERE location.product_id=product.id)"
-            ),
-            "total_inventory"),
-          ],
-          [
-            Sequelize.literal(
-              "(SELECT sum(location.quantity * product.price ) FROM location WHERE location.product_id=product.id)"
-            ),
-            "total_inventory_value",
-          ],
-        ],
-      });
+    if (product) {
       res.json(product);
     } else {
       res.status(404).json({
@@ -77,7 +77,7 @@ router.get("/:id", async (req, res) => {
       });
     }
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
     res.status(500).json({
       error: "An unexpected error occurred",
     });
