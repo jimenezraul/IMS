@@ -4,7 +4,7 @@ const { Category, Product, User, Location, Supplier } = require("../models");
 
 router.get("/", withAuth, async (req, res) => {
   // get all categories
-  const categoryData = await Category.findAll({});
+    const categoryData = await Category.findAll({});
   const category = categoryData.map((category) =>
     category.get({ plain: true })
   );
@@ -16,7 +16,9 @@ router.get("/", withAuth, async (req, res) => {
     loggedIn: req.session.loggedIn,
     categories: category,
     products: product,
+    title: "All Products",
   });
 });
+
 
 module.exports = router;
