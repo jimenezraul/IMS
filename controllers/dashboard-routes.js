@@ -17,7 +17,7 @@ router.get("/", withAuth, async (req, res) => {
     loggedIn: req.session.loggedIn,
     categories: categories,
     products: product,
-    title: "All Products",
+    title: "Dashboard",
   });
 });
 
@@ -45,7 +45,7 @@ router.get("/category/:id", withAuth, async (req, res) => {
         loggedIn: req.session.loggedIn,
         categories: categories,
         products: product,
-        title: `Products by ${category.name}`,
+        title: `Dashboard/${category.name}`,
     });
 });
 
