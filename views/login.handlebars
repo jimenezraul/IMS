@@ -1,40 +1,26 @@
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
+<div class="flex-grow-1 d-flex">
+  <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+  <div class="col-10 col-sm-9 col-md-6 col-lg-5 col-xl-4 p-5 bg-light rounded shadow">
+    <form class="login-form">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="email-login" placeholder="Email address" class="form-control" />
       </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="password-login" placeholder="Password" class="form-control" />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="login-card">
-    <h2 class="page-title">Signup</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Signup</button>
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary col-12 mb-4">Sign in</button>
+
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
       </div>
     </form>
   </div>
 </div>
+</div>
 
-<script src="./js/login.js"></script>
+<script src="/javascript/login.js"></script>
