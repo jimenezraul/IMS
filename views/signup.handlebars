@@ -1,21 +1,30 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Sign Up</h2>
-  </div>
-  <div id="signup" role="tabpanel">
-    <form id="signup-form" class="card-body">
-      <div>
-        <label for="username-input-signup">Username</label>
-        <input type="text" id="username-input-signup" />
+<div class="flex-grow-1 d-flex">
+  <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+  <div class="col-10 col-sm-9 col-md-6 col-lg-5 col-xl-4 p-5 bg-light rounded shadow">
+    <form class="register-form">
+        <!-- username input -->
+        <div class="form-outline mb-4">
+        <input type="text" id="username-register" placeholder="Username" class="form-control" />
       </div>
-      <div>
-        <label for="password-input-signup">Password</label>
-        <input type="password" id="password-input-signup" />
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="email-register" placeholder="Email address" class="form-control" />
       </div>
-      <button type="submit" id="signup-btn" class="btn" >Signup!</button>
-      <a href="/login">Login instead</a>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="password-register" placeholder="Password" class="form-control" />
+      </div>
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary col-12 mb-4">Register</button>
+
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>Have already an account? <a href="/login">Login here</a></p>
+      </div>
     </form>
   </div>
 </div>
+</div>
 
-<script src="/js/signup.js"></script>
+<script src="/javascript/signup.js"></script>
