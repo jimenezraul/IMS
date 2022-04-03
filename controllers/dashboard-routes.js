@@ -4,13 +4,8 @@ const { Category, Product, User, Location, Supplier } = require("../models");
 
 router.get("/", withAuth, async (req, res) => {
   // get all categories
-<<<<<<< HEAD
-    const categoryData = await Category.findAll({});
-  const category = categoryData.map((category) =>
-=======
   const categoryData = await Category.findAll({});
   const categories = categoryData.map((category) =>
->>>>>>> feature/dashboard-route
     category.get({ plain: true })
   );
     
@@ -26,8 +21,6 @@ router.get("/", withAuth, async (req, res) => {
   });
 });
 
-<<<<<<< HEAD
-=======
 // get product by category id
 router.get("/category/:id", withAuth, async (req, res) => {
     // get all categories
@@ -55,6 +48,5 @@ router.get("/category/:id", withAuth, async (req, res) => {
         title: `Products by ${category.name}`,
     });
 });
->>>>>>> feature/dashboard-route
 
 module.exports = router;
