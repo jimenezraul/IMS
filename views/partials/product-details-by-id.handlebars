@@ -1,5 +1,13 @@
 <div class="p-4">
   <h4 class="pb-4 border-bottom">{{name}}</h4>
+  <div class="dropdown py-3">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+    Description
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <p class="p-4">{{description}}</p>
+  </ul>
+</div>
   <p class="">Price: <strong>${{price}}</strong></p>
   <p class="">Sold By: <strong>{{units}}</strong></p>
   <p class="">Total Inventory Quantity: <strong>{{total_quantity}}</strong></p>
