@@ -19,7 +19,7 @@ router.get("/", withAuth, async (req, res) => {
     categories: categories,
     products: product,
     title: "Dashboard",
-    isCategoty: true,
+    isCategory: true,
   });
 });
 
@@ -48,7 +48,7 @@ router.get("/category/:id", withAuth, async (req, res) => {
     categories: categories,
     products: product,
     title: `Dashboard/Category`,
-    isCategoty: true,
+    isCategory: true,
   });
 });
 
