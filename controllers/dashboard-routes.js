@@ -45,8 +45,9 @@ router.get("/category/:id", withAuth, async (req, res) => {
         loggedIn: req.session.loggedIn,
         categories: categories,
         products: product,
-        title: `Dashboard/${category.name}`,
+        title: `Dashboard/Category`,
     });
 });
+
 
 module.exports = router;
