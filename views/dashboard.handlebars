@@ -55,7 +55,11 @@
     <div class="col-12 col-lg-8 d-flex justify-content-center mb-3">
       <div class="card border w-100">
         <div class="card-header position-relative">
-          <h3>Products</h3>
+          {{#if isCategory}}
+            <h3>Products</h3>
+            {{else}}
+            <h3>Stock details</h3>
+            {{/if}}
           <a class="product position-absolute" href="/edit-product">
             <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
           </a>
@@ -63,6 +67,7 @@
         <div class="card-body">
           <table class="table table-striped">
             <thead>
+              {{#if isCategory}}
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
@@ -70,11 +75,25 @@
                 <th scope="col">Unit</th>
                 <th scope="col">Inventory</th>
               </tr>
+                {{else}}
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Slot</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Putaway by</th>
+                </tr>
+                {{/if}}
             </thead>
             <tbody>
-                {{#each products as |product|}}
-                {{> product-details product=product index=@index}}
-                {{/each}}
+                {{#if isCategory}}
+                    {{#each products as |product|}}
+                        {{> product-details product=product index=@index}}
+                    {{/each}}
+                {{else}}
+                    {{#each product.locations as |stock|}}
+                        {{> stock-details stock=stock index=@index}}
+                    {{/each}}
+                {{/if}}
             </tbody>
           </table>
         </div>
