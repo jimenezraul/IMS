@@ -14,6 +14,9 @@
         </div>
     </div>
 
+<!-- Product Modal -->
+{{>product-modal product}}
+
 <!-- Content -->
 <div class="container mt-3">
   <div class="row justify-content-center">
@@ -26,7 +29,7 @@
                 <h3>Product</h3>
                     {{/if}}
             <!-- edit category button -->
-            <a class="category position-absolute" href="{{#if isCategory }}/edit-category {{else}}/edit-product/{{product.id}}{{/if}}">
+            <a class="category position-absolute" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
                 <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
             </a>
             </div>

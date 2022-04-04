@@ -1,0 +1,74 @@
+<div
+  class="modal fade"
+  id="exampleModalToggle"
+  aria-hidden="true"
+  aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Product</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- form -->
+        <div class="container">
+          <form id="update-product-form" user-data="{{user_id}}" method="POST">
+            <div class="mt-3 bg-dark overflow-hidden">
+              <div class="card-body bg-light">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="product-name"
+                    name="name"
+                    value="{{name}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="name">Description</label>
+                  <textarea
+                    type="text"
+                    class="form-control"
+                    id="product-description"
+                    name="description"
+                    rows="3"
+                  >{{description}}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="body">Price</label>
+                  <input
+                  type="number"
+                    class="form-control"
+                    id="product-price"
+                    name="price"
+                    value="{{price}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="body">Unit</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="product-unit"
+                    name="unit"
+                    value="{{units}}"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Update</button>
+                <a type="submit" class="btn btn-danger mt-3">Delete</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
