@@ -20,16 +20,24 @@
     <div class="col-12 col-lg-4 mb-2">
       <div class="card">
         <div class="card-header position-relative">
+            {{#if isCategory}}
           <h3>Categories</h3>
+            {{else}}
+            <h3>Product</h3>
+                {{/if}}
           <!-- edit category button -->
           <a class="category position-absolute" href="/edit-category">
             <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
           </a>
         </div>
         <ul class="list-group list-group-flush">
+            {{#if isProduct}}
+            {{> product-details-by-id product}}
+            {{else}}
           {{#each categories as |category|}}
           {{> category-details category}}
           {{/each}}
+            {{/if}}
         </ul>
       </div>
     </div>

@@ -19,6 +19,7 @@ router.get("/", withAuth, async (req, res) => {
     categories: categories,
     products: product,
     title: "Dashboard",
+    isCategoty: true,
   });
 });
 
@@ -47,6 +48,7 @@ router.get("/category/:id", withAuth, async (req, res) => {
     categories: categories,
     products: product,
     title: `Dashboard/Category`,
+    isCategoty: true,
   });
 });
 
@@ -103,8 +105,9 @@ router.get("/product/:id", async (req, res) => {
     const product = productData.get({ plain: true });
     res.render("dashboard", {
       loggedIn: req.session.loggedIn,
-      products: product,
+      product: product,
       title: `Dashboard/Product`,
+      isProduct: true,
     });
   } catch (err) {
     console.error(err.message);
