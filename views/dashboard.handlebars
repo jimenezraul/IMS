@@ -18,6 +18,7 @@
 
 {{#if isProduct}}
     {{>product-modal product}}
+    {{>supplier-modal product.supplier product_id=product.id}}
 {{/if}}
 
 <!-- Content -->
@@ -37,7 +38,7 @@
                     <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
                 </a>
             {{else}}
-                <a class="category position-absolute" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                <a class="category position-absolute" data-bs-toggle="modal" href="#productModalToggle" role="button">
                     <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
                 </a>
             {{/if}}
@@ -54,8 +55,11 @@
       </div>
     {{#if isProduct}}
         <div class="card mt-2">
-            <div class="card-header">
+            <div class="card-header position-relative">
             <h3>Supplier</h3>
+            <a class="category position-absolute" data-bs-toggle="modal" href="#supplierModalToggle" role="button">
+                    <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
+                </a>
             </div>
             <ul class="list-group list-group-flush">
             {{> product-supplier-details product.supplier}}

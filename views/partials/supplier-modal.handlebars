@@ -1,0 +1,111 @@
+<div
+  class="modal fade"
+  id="supplierModalToggle"
+  aria-hidden="true"
+  aria-labelledby="supplierModalToggleLabel"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Supplier</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- form -->
+        <div class="container">
+          <form
+            id="update-supplier-form"
+            method="POST"
+            supplier_id="{{id}}"
+          >
+            <div class="mt-3 bg-dark overflow-hidden">
+              <div class="card-body bg-light">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="supplier-name"
+                    name="name"
+                    value="{{name}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="name">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="supplier-email"
+                    name="email"
+                    value="{{email}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="body">Phone</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="supplier-phone"
+                    name="phone"
+                    value="{{phone}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="body">Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="supplier-address"
+                    name="address"
+                    value="{{address}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="body">City</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="supplier-city"
+                    name="city"
+                    value="{{city}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="body">State</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="supplier-state"
+                    name="state"
+                    value="{{state}}"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="body">Zip</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="supplier-zip"
+                    name="zip"
+                    value="{{zip}}"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary mt-3"
+                >Update</button>
+                <a type="submit" class="btn btn-danger mt-3">Delete</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
