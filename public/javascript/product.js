@@ -36,4 +36,24 @@ async function updateProduct(event) {
   }
 }
 
+// delete product
+async function deleteProduct(event) {
+  event.preventDefault();
+  const productId = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+
+  const response = await fetch(`/api/products/${productId}`, {
+    method: "delete",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    document.location.replace("/dashboard");
+  } else {
+    alert(response.statusText);
+  }
+}
+
 productForm.addEventListener("submit", updateProduct);
+document.querySelector("#deleteBtn").addEventListener("click", deleteProduct);
