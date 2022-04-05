@@ -1,0 +1,77 @@
+<div class="flex-grow-1 d-flex my-4">
+  <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+    <div
+      class="col-10 col-sm-9 col-md-6 col-lg-5 col-xl-4 p-5 bg-light rounded shadow"
+    >
+      <form class="new-product-form" user_data="{{user_id}}">
+
+        <div class="form-outline mb-4 text-center">
+          <h1>Add New Product</h1>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            id="new-product-name"
+            placeholder="Name"
+            class="form-control"
+          />
+        </div>
+        <div class="form-outline mb-4">
+          <textarea
+            type="text"
+            id="new-product-description"
+            placeholder="Description"
+            class="form-control"
+            rows="2"
+          ></textarea>
+        </div>
+        <div class="form-outline mb-4">
+          <input
+            type="number"
+            id="new-product-price"
+            placeholder="Price"
+            class="form-control"
+            step="0.01"
+          />
+        </div>
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            id="new-product-units"
+            placeholder="Unit"
+            class="form-control"
+          />
+        </div>
+        <select
+          class="form-select form-select-lg mb-3"
+          aria-label=".form-select-lg example"
+          id="new-product-category"
+        >
+          <option selected>Select a Category</option>
+          {{#each categories as |category|}}
+            {{> option category}}
+          {{/each}}
+        </select>
+
+        <select
+          class="form-select form-select-lg mb-3"
+          aria-label=".form-select-lg example"
+          id="new-product-supplier"
+        >
+          <option selected>Select a Supplier</option>
+          {{#each suppliers as |supplier|}}
+            {{> option supplier}}
+          {{/each}}
+        </select>
+        <!-- Submit button -->
+        <button
+          type="submit"
+          class="btn btn-primary col-12 mb-4"
+        >Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/javascript/add-product.js"></script>
