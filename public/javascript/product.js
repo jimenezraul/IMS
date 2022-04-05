@@ -35,7 +35,7 @@ async function updateProduct(event) {
   }
 }
 
-// handle supplier form 
+// handle supplier form
 const supplierForm = document.querySelector("#update-supplier-form");
 
 async function updateSupplier(event) {
@@ -72,7 +72,8 @@ async function updateSupplier(event) {
     }
   } else {
     alert("Please, fill out all fields");
-
+  }
+}
 // delete product
 async function deleteProduct(event) {
   event.preventDefault();
@@ -89,7 +90,6 @@ async function deleteProduct(event) {
     document.location.replace("/dashboard");
   } else {
     alert(response.statusText);
-
   }
 }
 
@@ -98,4 +98,3 @@ productForm.addEventListener("submit", updateProduct);
 supplierForm.addEventListener("submit", updateSupplier);
 
 document.querySelector("#deleteBtn").addEventListener("click", deleteProduct);
-
