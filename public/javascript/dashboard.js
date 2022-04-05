@@ -1,6 +1,9 @@
 // search bar
+const searchForm = document.querySelector('#search-form');
 
-function search() {
+function search(event) {
+  event.preventDefault();
+
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("search");
   filter = input.value.toUpperCase();
@@ -18,3 +21,5 @@ function search() {
       }
   }
 }
+
+searchForm.addEventListener('submit', search);
