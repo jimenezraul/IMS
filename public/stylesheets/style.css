@@ -1,4 +1,4 @@
-#intro-example{
+#intro-example {
     background: url('/images/warehouse.png') rgba(0, 0, 0, 0.414);
     background-blend-mode: multiply;
     background-size: cover;
@@ -6,20 +6,25 @@
     background-repeat: no-repeat;
 }
 
-.mask{
+.mask {
     height: 90%;
     border-radius: 1rem;
 }
 
-.bg-secondary{
-    background-color: #c3c9d5!important;
+.bg-secondary {
+    background-color: #c3c9d5 !important;
 }
 
-.category, .product{
+.category, .product {
     top: .8rem;
     right: 1rem;
 }
 
-.list-group-item:hover{
-    background-color: #f1f1f1!important;
+.list-group-item:hover {
+    background-color: #f1f1f1 !important;
+}
+
+.selected-category {
+    list-style-type: none;
+    padding: .5rem 1rem;
 }

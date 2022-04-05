@@ -111,35 +111,33 @@ async function deleteSupplier(event) {
 
 //add stock
 async function addStock(event, id) {
-    event.preventDefault();
-    const productId = window.location.toString().split("/")[
-        window.location.toString().split("/").length - 1
-    ];
-    const slot = document.querySelector("#add-stock-slot").value.trim();
-    const quantity = document.querySelector("#add-stock-quantity").value.trim();
-    
-    if (slot && quantity) {
-        const response = await fetch(`/api/locations`, {
-            method: "post",
-            body: JSON.stringify({
-                slot,
-                quantity,
-                "user_id": id,
-                "product_id": productId,
-            }),
-            headers: { "Content-Type": "application/json" },
-        });
-        if (response.ok) {
-            location.reload();
-        } else {
-            alert(response.statusText);
-        }
+  event.preventDefault();
+  const productId = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+  const slot = document.querySelector("#add-stock-slot").value.trim();
+  const quantity = document.querySelector("#add-stock-quantity").value.trim();
+
+  if (slot && quantity) {
+    const response = await fetch(`/api/locations`, {
+      method: "post",
+      body: JSON.stringify({
+        slot,
+        quantity,
+        user_id: id,
+        product_id: productId,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      location.reload();
     } else {
-        alert("Please, fill out all fields");
+      alert(response.statusText);
     }
+  } else {
+    alert("Please, fill out all fields");
+  }
 }
-
-
 
 // update stock
 async function submitStockForm(event, id) {

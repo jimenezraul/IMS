@@ -32,7 +32,7 @@ router.get("/category/:id", withAuth, async (req, res) => {
   );
   //name of category
   const categoryNameData = await Category.findByPk(req.params.id, {
-    attributes: ["name"],
+    attributes: ["id", "name"],
   });
   const category = categoryNameData.get({ plain: true });
   console.log(category.name);
@@ -46,9 +46,11 @@ router.get("/category/:id", withAuth, async (req, res) => {
   res.render("dashboard", {
     loggedIn: req.session.loggedIn,
     categories: categories,
+    category: category,
     products: product,
     title: `Dashboard/Category`,
     isCategory: true,
+    id: true,
   });
 });
 

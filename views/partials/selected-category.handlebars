@@ -1,0 +1,18 @@
+{{>update-category-modal}}
+
+<div class="card mt-2">
+  <div class="card-header position-relative">
+    <h3>Category Selected</h3>
+    <a
+      class="category position-absolute"
+      data-bs-toggle="modal"
+      href="#updateCategoryModalToggle"
+      role="button"
+    >
+      <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
+    </a>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="selected-category">{{name}}</li>
+  </ul>
+</div>

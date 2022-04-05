@@ -22,5 +22,6 @@ const category_form_handler = async (event) => {
         alert("Please enter a category name.");
     }
 };
+
     
 category_form.addEventListener("submit", category_form_handler);

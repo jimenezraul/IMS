@@ -35,7 +35,6 @@
             <!-- edit category button -->
             {{#if isCategory}}
                 <a class="category position-absolute">
-                    <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
                 </a>
             {{else}}
                 <a class="category position-absolute" data-bs-toggle="modal" href="#productModalToggle" role="button">
@@ -65,6 +64,10 @@
             {{> product-supplier-details product.supplier}}
             </ul>
         </div>
+    {{/if}}
+
+    {{#if id}}
+        {{>selected-category category}}
     {{/if}}
 
     </div>
@@ -122,4 +125,8 @@
 
 {{#if isProduct}}
     <script src="/javascript/product.js"></script>
+{{/if}}
+
+{{#if id}}
+    <script src="/javascript/dashboard.js"></script>
 {{/if}}
