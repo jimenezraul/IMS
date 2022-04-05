@@ -53,7 +53,7 @@ router.get("/category/:id", withAuth, async (req, res) => {
 });
 
 // get one product
-router.get("/product/:id",withAuth, async (req, res) => {
+router.get("/product/:id", withAuth, async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       attributes: [
@@ -108,7 +108,7 @@ router.get("/product/:id",withAuth, async (req, res) => {
       product: product,
       title: `Dashboard/Product`,
       isProduct: true,
-      user_id: req.session.id,
+      user_id: req.session.user_id,
     });
   } catch (err) {
     console.error(err.message);

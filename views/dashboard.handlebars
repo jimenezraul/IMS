@@ -107,6 +107,10 @@
                     {{#each product.locations as |stock|}}
                         {{> stock-details stock=stock index=@index}}
                     {{/each}}
+                    {{>add-stock-modal user_id=user_id}}
+                    <a class="category position-absolute" data-bs-toggle="modal" href="#addStockModalToggle" role="button">
+                    <i class="fs-2 fa-solid fa-circle-plus"></i>
+                </a>
                 {{/if}}
             </tbody>
           </table>

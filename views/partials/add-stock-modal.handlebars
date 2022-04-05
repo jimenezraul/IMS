@@ -1,8 +1,8 @@
 <div
   class="modal fade"
-  id="stockModalToggle{{id}}"
+  id="addStockModalToggle"
   aria-hidden="true"
-  aria-labelledby="stockModalToggleLabel"
+  aria-labelledby="addStockModalToggleLabel"
   tabindex="-1"
 >
   <div class="modal-dialog modal-dialog-centered">
@@ -18,19 +18,20 @@
       </div>
       <div class="modal-body">
         <!-- form -->
+
         <form
-          id="update-stock-form-{{id}}"
-          onsubmit="submitStockForm(event, {{id}})"
+          id="add-stock-form"
+          onsubmit="addStock(event, {{user_id}})"
           method="POST"
         >
-          <div class="mt-3 bg-dark overflow-hidden">
+          <div class="bg-dark overflow-hidden">
             <div class="card-body bg-light">
               <div class="form-group">
                 <label for="name">Slot</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="stock-slot-{{id}}"
+                  id="add-stock-slot"
                   name="slot"
                   value="{{slot}}"
                 />
@@ -40,21 +41,16 @@
                 <input
                   type="number"
                   class="form-control"
-                  id="stock-quantity-{{id}}"
+                  id="add-stock-quantity"
                   name="Quantity"
                   value="{{quantity}}"
                 />
               </div>
               <button
-                id="stockUpdateBtn"
+                id="stockAddBtn"
                 type="submit"
                 class="btn btn-primary mt-3"
-              >Update</button>
-              <button
-                onclick="deleteStock(event, {{id}})"
-                type="submit"
-                class="btn btn-danger mt-3"
-              >Delete</button>
+              >Submit</button>
             </div>
           </div>
         </form>

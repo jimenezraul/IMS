@@ -87,6 +87,7 @@ router.post("/login", async (req, res) => {
         email: req.body.email,
       },
     });
+    
     if (dbUserData) {
       const isValidPassword = dbUserData.validatePassword(req.body.password);
       if (isValidPassword) {
