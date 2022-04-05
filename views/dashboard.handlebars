@@ -15,8 +15,10 @@
     </div>
 
 <!-- Product Modal -->
-{{>product-modal product }}
 
+{{#if isProduct}}
+    {{>product-modal product}}
+{{/if}}
 
 <!-- Content -->
 <div class="container mt-3">
@@ -30,9 +32,15 @@
                 <h3>Product</h3>
                     {{/if}}
             <!-- edit category button -->
-            <a class="category position-absolute" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
-                <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
-            </a>
+            {{#if isCategory}}
+                <a class="category position-absolute">
+                    <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
+                </a>
+            {{else}}
+                <a class="category position-absolute" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+                    <i class="fs-4 fa-solid fa-pen-to-square text-primary"></i>
+                </a>
+            {{/if}}
             </div>
             <ul class="list-group list-group-flush">
                 {{#if isProduct}}

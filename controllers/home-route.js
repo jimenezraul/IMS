@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require("../utils/auth.js");
 
 router.get("/", (req, res) => {
   res.render("mainpage", {
@@ -12,6 +13,12 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   res.render("signup");
+});
+
+router.get("/add-category", withAuth, (req, res) => {
+  res.render("add-category", {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 module.exports = router;
