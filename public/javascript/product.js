@@ -1,4 +1,3 @@
-const updateStockForm = document.querySelector("#update-stock-form");
 const productForm = document.querySelector("#update-product-form");
 const supplierForm = document.querySelector("#update-supplier-form");
 
@@ -111,54 +110,51 @@ async function deleteSupplier(event) {
 }
 
 // update stock
-async function updateStock(event) {
-    event.preventDefault();
-    const id = updateStockForm.getAttribute("stock_id");
-    const slot = document.querySelector("#stock-slot").value.trim();
-    const quantity = document.querySelector("#stock-quantity").value.trim();
+async function submitStockForm(event, id) {
+  event.preventDefault();
 
-    if (slot && quantity) {
-        const response = await fetch(`/api/locations/${id}`, {
-            method: "put",
-            body: JSON.stringify({
-                slot,
-                quantity,
-            }),
-            headers: { "Content-Type": "application/json" },
-        });
-        if (response.ok) {
-            location.reload();
-        } else {
-            alert(response.statusText);
-        }
+  const slot = document.querySelector(`#stock-slot-${id}`).value.trim();
+  const quantity = document.querySelector(`#stock-quantity-${id}`).value.trim();
+
+  if (slot && quantity) {
+    const response = await fetch(`/api/locations/${id}`, {
+      method: "put",
+      body: JSON.stringify({
+        slot,
+        quantity,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      location.reload();
     } else {
-        alert("Please, fill out all fields");
+      alert(response.statusText);
     }
+  } else {
+    alert("Please, fill out all fields");
+  }
 }
 
 // delete stock
-async function deleteStock(event) {
-    event.preventDefault();
-    const id = updateStockForm.getAttribute("stock_id");
+async function deleteStock(event, id) {
+  event.preventDefault();
 
-    const response = await fetch(`/api/locations/${id}`, {
-        method: "delete",
-        headers: { "Content-Type": "application/json" },
-    });
+  const response = await fetch(`/api/locations/${id}`, {
+    method: "delete",
+    headers: { "Content-Type": "application/json" },
+  });
 
-    if (response.ok) {
-        location.reload();
-    } else {
-        alert(response.statusText);
-    }
+  if (response.ok) {
+    location.reload();
+  } else {
+    alert(response.statusText);
+  }
 }
 
 productForm.addEventListener("submit", updateProduct);
 supplierForm.addEventListener("submit", updateSupplier);
-updateStockForm.addEventListener("submit", updateStock);
 
 document.querySelector("#deleteBtn").addEventListener("click", deleteProduct);
 document
   .querySelector("#deleteSupplierBtn")
-    .addEventListener("click", deleteSupplier);
-document.querySelector("#deleteStockBtn").addEventListener("click", deleteStock);
+  .addEventListener("click", deleteSupplier);

@@ -51,7 +51,7 @@ const productData = [
     units: "case",
     user_id: 2,
     category_id: 2,
-    supplier_id: 3,
+    supplier_id: 2,
   },
   {
     name: "PURELL® Foodservice Surface Sanitizer Spray",
@@ -61,7 +61,7 @@ const productData = [
     units: "case",
     user_id: 2,
     category_id: 2,
-    supplier_id: 3,
+    supplier_id: 2,
   },
   {
     name: "PURELL® TFX™ Dispenser",
@@ -71,7 +71,7 @@ const productData = [
     units: "case",
     user_id: 3,
     category_id: 2,
-    supplier_id: 3,
+    supplier_id: 2,
   },
   {
     name: "PURELL® Advanced Hand Sanitizer Green Certified Foam",
@@ -81,7 +81,7 @@ const productData = [
     units: "case",
     user_id: 2,
     category_id: 2,
-    supplier_id: 3,
+    supplier_id: 2,
   },
   // Paper Goods
   {
@@ -92,7 +92,7 @@ const productData = [
     units: "case",
     user_id: 3,
     category_id: 3,
-    supplier_id: 4,
+    supplier_id: 3,
   },
   {
     name: "Scott Essential Professional Bulk Toilet Paper for Business, Individually Wrapped Standard Rolls, 2-PLY, White",
@@ -102,7 +102,7 @@ const productData = [
     units: "case",
     user_id: 3,
     category_id: 3,
-    supplier_id: 4,
+    supplier_id: 3,
   },
   {
     name: "GEORGIA PACIFIC PACIFIC BLUE BASIC™ JUMBO SR. 2-PLY HIGH CAPACITY TOILET PAPER BY GP PRO (GEORGIA-PACIFIC), WHITE",
@@ -112,7 +112,7 @@ const productData = [
     units: "case",
     user_id: 2,
     category_id: 3,
-    supplier_id: 4,
+    supplier_id: 3,
   },
   {
     name: "Kleenex Professional Facial Tissue for Business, Flat Tissue Boxes",
@@ -122,7 +122,7 @@ const productData = [
     units: "case",
     user_id: 2,
     category_id: 3,
-    supplier_id: 4,
+    supplier_id: 3,
   },
 ];
 

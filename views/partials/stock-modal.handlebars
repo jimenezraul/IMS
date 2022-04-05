@@ -20,9 +20,9 @@
         <!-- form -->
         <div class="container">
           <form
-            id="update-stock-form"
+            id="update-stock-form-{{id}}"
+            onsubmit="submitStockForm(event, {{id}})"
             method="POST"
-            stock_id="{{id}}"
           >
             <div class="mt-3 bg-dark overflow-hidden">
               <div class="card-body bg-light">
@@ -31,7 +31,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="stock-slot"
+                    id="stock-slot-{{id}}"
                     name="name"
                     value="{{slot}}"
                   />
@@ -41,7 +41,7 @@
                   <input
                     type="number"
                     class="form-control"
-                    id="stock-quantity"
+                    id="stock-quantity-{{id}}"
                     name="Quantity"
                     value="{{quantity}}"
                   />
@@ -52,7 +52,7 @@
                   class="btn btn-primary mt-3"
                 >Update</button>
                 <button
-                  id="deleteStockBtn"
+                  onclick="deleteStock(event, {{id}})"
                   type="submit"
                   class="btn btn-danger mt-3"
                 >Delete</button>
