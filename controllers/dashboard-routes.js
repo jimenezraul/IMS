@@ -108,6 +108,7 @@ router.get("/product/:id", async (req, res) => {
       product: product,
       title: `Dashboard/Product`,
       isProduct: true,
+      user_id: req.session.id,
     });
   } catch (err) {
     console.error(err.message);
