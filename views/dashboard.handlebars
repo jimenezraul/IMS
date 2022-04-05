@@ -6,8 +6,8 @@
                 </div>
                 <div class="col-12 col-md-6 my-2">
                     <div class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                        <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" onclick="search()">Search</button>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                 </tr>
                 {{/if}}
             </thead>
-            <tbody>
+            <tbody id="myTable">
                 {{#if isCategory}}
                     {{#each products as |product|}}
                         {{> product-details product=product index=@index}}
@@ -128,5 +128,7 @@
 {{/if}}
 
 {{#if id}}
-    <script src="/javascript/dashboard.js"></script>
+    <script src="/javascript/dashboard-category.js"></script>
 {{/if}}
+
+<script src="/javascript/dashboard.js"></script>
