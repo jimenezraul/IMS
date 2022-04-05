@@ -1,7 +1,7 @@
 <div class="flex-grow-1 d-flex my-4">
   <div class="flex-grow-1 d-flex justify-content-center align-items-center">
     <div
-      class="col-10 col-sm-9 col-md-6 col-lg-5 col-xl-4 p-5 bg-light rounded shadow"
+      class="col-11 col-sm-9 col-md-6 col-lg-5 col-xl-4 p-5 bg-light rounded shadow"
     >
       <form class="new-product-form" user_data="{{user_id}}">
 
@@ -48,7 +48,7 @@
           aria-label=".form-select-lg example"
           id="new-product-category"
         >
-          <option selected>Select a Category</option>
+          <option selected>Select Category</option>
           {{#each categories as |category|}}
             {{> option category}}
           {{/each}}
@@ -59,7 +59,7 @@
           aria-label=".form-select-lg example"
           id="new-product-supplier"
         >
-          <option selected>Select a Supplier</option>
+          <option selected>Select Supplier</option>
           {{#each suppliers as |supplier|}}
             {{> option supplier}}
           {{/each}}
