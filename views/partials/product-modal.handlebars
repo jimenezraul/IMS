@@ -19,7 +19,14 @@
       <div class="modal-body">
         <!-- form -->
         <div class="container">
-          <form id="update-product-form" product_id="{{id}}" method="POST">
+          <form
+            id="update-product-form"
+            product_id="{{id}}"
+            category_id="{{category.id}}"
+            supplier_id="{{supplier.id}}"
+            user_id="{{user_id}}"
+            method="POST"
+          >
             <div class="mt-3 bg-dark overflow-hidden">
               <div class="card-body bg-light">
                 <div class="form-group">
@@ -45,7 +52,7 @@
                 <div class="form-group">
                   <label for="body">Price</label>
                   <input
-                  type="number"
+                    type="number"
                     class="form-control"
                     id="product-price"
                     name="price"
@@ -62,7 +69,10 @@
                     value="{{units}}"
                   />
                 </div>
-                <button type="submit" class="btn btn-primary mt-3">Update</button>
+                <button
+                  type="submit"
+                  class="btn btn-primary mt-3"
+                >Update</button>
                 <a type="submit" class="btn btn-danger mt-3">Delete</a>
               </div>
             </div>
