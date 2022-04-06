@@ -13,6 +13,7 @@ This Inventory Management System application will allow a company with large amo
   - [SQL Database](#sql-database)
   - [Seed Data](#seed-data)
   - [Start the server](#start-the-server)
+  - [API Endpoints](#api-endpoints)
   - [License](#license)
   - [Deployment](#deployment)
   - [Contributing](#contributing)
@@ -45,6 +46,20 @@ npm run seeds
 ## Start the server
 ```
 npm start
+```
+
+## API Endpoints
+```
+GET, POST /api/categories
+GET, POST, PUT, DELETE /api/categories/:id
+GET, POST /api/products
+GET, POST, PUT, DELETE /api/products/:id
+GET, POST /api/suppliers
+GET, PUT, DELETE /api/suppliers/:id
+GET, POST /api/locations
+GET, PUT, DELETE /api/locations/:id
+GET /api/users
+GET, PUT, DELETE /api/users/:id
 ```
 
 ## License
