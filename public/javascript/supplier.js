@@ -1,6 +1,26 @@
-//  new supplier form
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+// Capetilize first letter of each word
+const capitalizeEach = (string) => {
+  string = string.split(" ");
+  for (let i = 0; i < string.length; i++) {
+    string[i] = capitalize(string[i]);
+  }
+  return string.join(" ");
+};
+
+// capetalize all words in a string
+const capitalizeAll = (string) => {
+  return string
+    .split("")
+    .map((word) => capitalize(word))
+    .join("");
+};
 
 const supplier_form = document.querySelector(".new-supplier-form");
+
+//  new supplier form
 
 const handleSupplierForm = async (event) => {
   event.preventDefault();
@@ -17,12 +37,12 @@ const handleSupplierForm = async (event) => {
     const response = await fetch("/api/suppliers", {
       method: "POST",
       body: JSON.stringify({
-        name: name,
+        name: capitalizeEach(name),
         email: email,
         phone: number,
-        address: address,
-        city: city,
-        state: state,
+        address: capitalizeEach(address),
+        city: capitalizeEach(city),
+        state: capitalizeAll(state),
         zip: zip,
       }),
       headers: { "Content-Type": "application/json" },

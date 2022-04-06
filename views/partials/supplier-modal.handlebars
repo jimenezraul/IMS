@@ -19,11 +19,7 @@
       <div class="modal-body">
         <!-- form -->
         <div class="container">
-          <form
-            id="update-supplier-form"
-            method="POST"
-            supplier_id="{{id}}"
-          >
+          <form id="update-supplier-form" method="POST" supplier_id="{{id}}">
             <div class="mt-3 bg-dark overflow-hidden">
               <div class="card-body bg-light">
                 <div class="form-group">
@@ -49,10 +45,12 @@
                 <div class="form-group">
                   <label for="body">Phone</label>
                   <input
-                    type="number"
-                    class="form-control"
+                    type="tel"
                     id="supplier-phone"
+                    placeholder="Phone Number"
                     name="phone"
+                    pattern="[0-9]{10}"
+                    class="form-control"
                     value="{{phone}}"
                   />
                 </div>
@@ -89,10 +87,12 @@
                 <div class="form-group">
                   <label for="body">Zip</label>
                   <input
-                    type="number"
-                    class="form-control"
                     id="supplier-zip"
+                    placeholder="ZIP"
+                    class="form-control"
                     name="zip"
+                    type="number"
+                    inputmode="numeric"
                     value="{{zip}}"
                   />
                 </div>
@@ -100,7 +100,11 @@
                   type="submit"
                   class="btn btn-primary mt-3"
                 >Update</button>
-                <a type="submit" id="deleteSupplierBtn" class="btn btn-danger mt-3">Delete</a>
+                <a
+                  type="submit"
+                  id="deleteSupplierBtn"
+                  class="btn btn-danger mt-3"
+                >Delete</a>
               </div>
             </div>
           </form>

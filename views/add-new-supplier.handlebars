@@ -27,9 +27,11 @@
         </div>
         <div class="form-outline mb-4">
           <input
-            type="number"
+            type="tel"
             id="new-supplier-number"
             placeholder="Phone Number"
+            name="phone"
+            pattern="[0-9]{10}"
             class="form-control"
           />
         </div>
@@ -60,10 +62,12 @@
         </div>
         <div class="form-outline mb-4">
           <input
-            type="text"
             id="new-supplier-zip"
             placeholder="ZIP"
             class="form-control"
+            name="zip"
+            type="number"
+            inputmode="numeric"
           />
         </div>
         <!-- Submit button -->

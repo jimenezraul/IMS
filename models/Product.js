@@ -51,7 +51,7 @@ Product.init(
         model: "supplier",
         key: "id",
       },
-    }
+    },
   },
   {
     sequelize,

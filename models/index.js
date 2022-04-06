@@ -31,7 +31,7 @@ Product.hasMany(Location, {
   onDelete: "CASCADE",
 });
 Location.belongsTo(Product, {
-  foreignKey: "product_id", 
+  foreignKey: "product_id",
   onDelete: "CASCADE",
 });
 Location.belongsTo(User, {
