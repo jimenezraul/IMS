@@ -45,7 +45,13 @@ router.get("/add-product", withAuth, async (req, res) => {
   } catch (err) {
     res.json({ message: err.message });
   }
+});
 
+// Add supplier
+router.get("/add-supplier", withAuth, (req, res) => {
+  res.render("add-new-supplier", {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 module.exports = router;
