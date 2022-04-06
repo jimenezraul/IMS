@@ -12,4 +12,13 @@ module.exports = {
     );
     return phoneFormatted;
   },
+  // format price
+  formatPrice: (price) => {
+    const num = new Number(price);
+    const formattedNumber = num.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+    return formattedNumber;
+  },
 };
