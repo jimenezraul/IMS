@@ -8,6 +8,7 @@ This Inventory Management System application will allow a company with large amo
 - [Inventory Management System](#inventory-management-system)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
+  - [Technologies Used](#technologies-used)
   - [Screenshots](#screenshots)
   - [Instalation](#instalation)
   - [SQL Database](#sql-database)
@@ -18,6 +19,18 @@ This Inventory Management System application will allow a company with large amo
   - [Deployment](#deployment)
   - [Contributing](#contributing)
   - [Questions](#questions)
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- NodeJS
+- ExpressJS
+- RESTful API
+- Handlebars
+- MySQL
+- Bootstrap
+- Font-Awesome
 
 ## Screenshots
 ![screenshot](/public/images/main.png)
