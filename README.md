@@ -6,11 +6,14 @@ This Inventory Management System application will allow a company with large amo
 
 This application was built using MVC architecture. The front end was built using HTML5, CSS3, Bootstrap and Javascipt and the back end was built using NodeJS, Express and Handlebars. The information is stored in MySQL database and the data is encrypted using bcrypt.
 
+## Click [here](https://ims-inventory-s.herokuapp.com/) to view the live application.
+
 ## Table of Contents
 - [Inventory Management System](#inventory-management-system)
   - [Description](#description)
+  - [Click here to view the live application.](#click-here-to-view-the-live-application)
   - [Table of Contents](#table-of-contents)
-  - [Technologies Used](#technologies-used)
+  - [Tools & Resources](#tools--resources)
   - [Screenshots](#screenshots)
   - [Instalation](#instalation)
   - [SQL Database](#sql-database)
@@ -22,21 +25,23 @@ This application was built using MVC architecture. The front end was built using
   - [Contributing](#contributing)
   - [Questions](#questions)
 
-## Technologies Used
-- HTML
-- CSS
-- JavaScript
-- NodeJS
-- ExpressJS
-- RESTful API
-- Handlebars
-- MySQL
-- Bootstrap
-- Font-Awesome
+## Tools & Resources
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
+* [Bootstrap](https://getbootstrap.com/)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [NodeJS](https://nodejs.org/)
+* [Express](https://expressjs.com/)
+* [Handlebars](https://handlebarsjs.com/)
+* [MySQL](https://www.mysql.com/)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ## Screenshots
+Main Page:
 ![screenshot](/public/images/main.png)
+Inventory Dashboard:
 ![screenshot](/public/images/dashboard.png)
+Product Page:
 ![screenshot](/public/images/product.png)
 
 ## Instalation
@@ -89,8 +94,7 @@ Application deployed on Heroku
 ## Contributing
 Raul [Github](https://github.com/jimenezraul)  
 Michelle [Github](https://github.com/michelle-aguirre)  
-Olga [Github](https://github.com/obrailovska)  
-Santiago [Github](https://github.com/bompilori)  
+Olga [Github](https://github.com/obrailovska)
 
 ## Questions
 Contact me by email
