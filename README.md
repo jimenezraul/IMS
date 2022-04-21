@@ -4,6 +4,8 @@
 ## Description
 This Inventory Management System application will allow a company with large amount of products to manage their inventory. It will allow employees to add, update, delete and view Categories, Supplier, Products and Inventory. In the main dashboard, it will display all categories with all product and each will have a button to view inventory. In the Product section, it will display the product information with total quantity in stock and total inventory value. Also it will display the supplier info, stock locations and quantity for the selected product.
 
+This application was built using MVC architecture. The front end was built using HTML5, CSS3, Bootstrap and Javascipt and the back end was built using NodeJS, Express and Handlebars. The information is stored in MySQL database and the data is encrypted using bcrypt.
+
 ## Table of Contents
 - [Inventory Management System](#inventory-management-system)
   - [Description](#description)
