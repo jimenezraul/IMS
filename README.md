@@ -6,14 +6,14 @@ This Inventory Management System application will allow a company with large amo
 
 This application was built using MVC architecture. The front end was built using HTML5, CSS3, Bootstrap and Javascipt and the back end was built using NodeJS, Express and Handlebars. The information is stored in MySQL database and the data is encrypted using bcrypt.
 
-## Click [here](https://ims-inventory-s.herokuapp.com/) to view the live application.
+## Click [here](https://ims-w5x6.onrender.com) to view the live application.
 
 ## Table of Contents
 - [Inventory Management System](#inventory-management-system)
   - [Description](#description)
   - [Click here to view the live application.](#click-here-to-view-the-live-application)
   - [Table of Contents](#table-of-contents)
-  - [Tools & Resources](#tools--resources)
+  - [Tools \& Resources](#tools--resources)
   - [Screenshots](#screenshots)
   - [Instalation](#instalation)
   - [SQL Database](#sql-database)
